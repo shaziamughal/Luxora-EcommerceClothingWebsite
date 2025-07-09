@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white py-2 px-6 rounded-sm hover:bg-primary-dark transition-colors duration-300 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-primary text-primary py-2 px-6 rounded-sm hover:bg-primary/5 transition-colors duration-300 font-medium;
+  }
+  
+  .input-field {
+    @apply w-full border border-neutral-300 rounded-sm px-4 py-2 focus:outline-none focus:ring-1 focus:ring-primary;
+  }
+  
+  .card {
+    @apply bg-white rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+  
+  .container-custom {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .product-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+  }
+}
+
+body {
+  @apply bg-background text-neutral-800;
+}
+
+.navbar-link {
+  @apply relative text-neutral-700 hover:text-primary transition-colors;
+}
+
+.navbar-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.navbar-link:hover::after {
+  @apply w-full;
+}
+
+.product-card-img {
+  @apply transition-transform duration-500;
+}
+
+.product-card:hover .product-card-img {
+  @apply scale-105;
+}
+
+.badge {
+  @apply inline-block px-2 py-1 text-xs font-medium rounded;
+}
+
+.badge-new {
+  @apply bg-accent text-white;
+}
+
+.badge-sale {
+  @apply bg-primary text-white;
+}
+
+.filter-checkbox:checked + label span {
+  @apply bg-primary border-primary;
+}
